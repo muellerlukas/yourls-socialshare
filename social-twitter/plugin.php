@@ -14,8 +14,7 @@ function mulu_yourls_share_twitter( $args ) {
 	
 	$text = rawurlencode( htmlspecialchars_decode( $title ) . ' ' . $shorturl );
 	$shorturl = rawurlencode( $shorturl );
-    $iconpath = YOURLS_PLUGINURL . '/' . yourls_plugin_basename( dirname(__FILE__) );
-
+	$iconpath = YOURLS_PLUGINURL . '/' . yourls_plugin_basename( dirname(__FILE__) );
 	$linktitle = yourls_s( 'Tweet this!' );
 	
 	echo <<<SOCIAL
