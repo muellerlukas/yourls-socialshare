@@ -1,3 +1,5 @@
 ### Social sharing plugins for [YOURLS](https://yourls.org) > 1.7.5
-- Twitter: Based on the original, included code
-- Facebook: Based on the original, included code
+- Remove Twitter: Hides the twitter share-button
+- Remove facebook: Hides the twitter share-button
+- Telegram: Adds sharing via the "tg"-protocol. Favicon of Telegram Web is used as icon.
+- WhatsApp: Adds sharing via either WA-Web or installed WA. Favicon of Whatsapp is used as icon.
