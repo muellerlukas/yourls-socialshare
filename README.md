@@ -1,4 +1,5 @@
-### Social sharing plugins for [YOURLS](https://yourls.org) after PR YOURLS/YOURLS#2554
+### Social sharing plugins for [YOURLS](https://yourls.org)
+- Base: Registeres required functions
 - Remove Twitter: Hides the twitter share-button
 - Remove facebook: Hides the twitter share-button
 - Telegram: Adds sharing via the "tg"-protocol. Favicon of Telegram Web is used as icon.
