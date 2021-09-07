@@ -8,8 +8,7 @@ Author URI: https://mulu.at
 Author URI: https://muellerlukas.de
 **/
 
-yourls_add_action( 'share_links', 'mulu_yourls_share_telegram' );
-function mulu_yourls_share_telegram( $args ) {
+yourls_add_action( 'share_links', function($args) {
     list( $longurl, $shorturl, $title, $text ) = $args;
 	
 	$text = rawurlencode( htmlspecialchars_decode( $title ) . ' ' . $shorturl );
@@ -17,12 +16,11 @@ function mulu_yourls_share_telegram( $args ) {
 	$linktitle = yourls_s( 'Share with Telegram' );
 	
 	echo <<<SOCIAL
-	<a href="tg://msg_url?text=$text"
-	data-shareurl="tg://msg_url?text=#share#"
+	<a href="https://t.me/share/url?text=$text&url=$shorturl"
+	data-shareurl="https://t.me/share/url?text=#share#&url=$shorturl"
 	title="$linktitle"
 	style="background:transparent url('https://web.telegram.org/favicon.ico') left center no-repeat; background-size: 16px;"
-	onclick="share(this);return false;">Telegram</a>
+	onclick="mulushare(this, 'width=800,height=550');return false;">Telegram</a>
 
 SOCIAL;
-
-}
+});

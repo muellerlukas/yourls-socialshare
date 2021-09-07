@@ -8,8 +8,7 @@ Author URI: https://mulu.at
 Author URI: https://muellerlukas.de
 **/
 
-yourls_add_action( 'share_links', 'mulu_yourls_share_threema' );
-function mulu_yourls_share_threema( $args ) {
+yourls_add_action( 'share_links', function($args) {
     list( $longurl, $shorturl, $title, $text ) = $args;
 	
 	$text = rawurlencode( htmlspecialchars_decode( $title ) . ' ' . $shorturl );
@@ -17,12 +16,11 @@ function mulu_yourls_share_threema( $args ) {
 	$linktitle = yourls_s( 'Share with Threema' );
 	
 	echo <<<SOCIAL
-	<a href="threema://compose?text=$text"
-	data-shareurl="threema://compose?text=#share#"
+	<a href="https://threema.id/compose?text=$text"
+	data-shareurl="https://threema.id/compose?text=#share#"
 	title="$linktitle"
 	style="background:transparent url('https://threema.ch/favicon.ico') left center no-repeat; background-size: 16px;"
-	onclick="share(this);return false;">Threema</a>
+	onclick="mulushare(this, 'toolbar=no,width=1000,height=550');return false;">Threema</a>
 
 SOCIAL;
-
-}
+});
